@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} NewsPortal {% endblock %}
+
+{% block content %}
+<br>
+
+{{ post.category.category_name }}
+
+<br>
+
+{% for p in post_list %}
+{{ p.post_author }}
+<a href="{{ p.get_absolute_url }}"> {{ p.headline }} </a>
+-
+{{ p.post_text }} *
+{{ p.post_rating }} ***
+{{ p.category }}
+<hr>
+{% endfor %}
+
+{% endblock %}
+</body>
+</html>

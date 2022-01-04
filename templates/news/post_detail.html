@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ post.headline }} {% endblock %}
+
+
+{% block content %}
+{{ post.post_category.all }}s
+{% for ss in post_category %}
+
+{{ ss.category_name }}
+{% endfor %}
+{{ post.post_category.category_detail }}
+
+<hr>
+<br> Заголовок: ** {{ post.headline }} ** <br>
+Текст: {{ post.post_text }} *- *-
+<br>
+Автор текста: {{ post.post_author }} *** Рейтинг автора: {{ post.post_author.author_rating }}
+<br>
+Рейтинг поста: {{ post.post_rating }}
+<hr> Комментарии
+{{ post.comment_text }}
+{% endblock %}
